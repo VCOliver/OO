@@ -1,5 +1,7 @@
 package models;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Classe utilizada para armazenar todos os bancos de dados
@@ -13,10 +15,11 @@ import java.util.ArrayList;
 public class DataBase {
 
 	/**
-	 * 2D array para armazerar os exercicios e seus respectivos musculos associados
+	 * HashMap para armazerar os exercicios e seus respectivos musculos associados
 	 * @see Exercise
 	 */
-	private static ArrayList<ArrayList<Exercise>> exercises;
+	private static HashMap<String, ArrayList<Exercise>> exercises = new HashMap<>();
+	
 
 	/**
 	 * Array para armazenar usuarios
@@ -37,7 +40,7 @@ public class DataBase {
 	 * Returna Array 2D de exercicios 
 	 * @return the exercises
 	 */
-	public static ArrayList<ArrayList<Exercise>> getExercises() {
+	public static HashMap<String, ArrayList<Exercise>> getExercises() {
 		return exercises;
 	}
 
@@ -57,4 +60,18 @@ public class DataBase {
 		return admins;
 	}
 	
+	
+	//Setters
+	/**
+	 * Initializes exercises database if null
+	 */
+	public static void InitializeExerciseDataBase(){
+		
+		if(exercises.isEmpty()) {
+			for(Muscles muscle : Muscles.values()) {
+				exercises.put(muscle.getValue(), new ArrayList<>());
+			}
+		}
+		
+	}
 }
