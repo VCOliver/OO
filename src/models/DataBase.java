@@ -1,7 +1,5 @@
 package models;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 
 /**
  * Classe utilizada para armazenar todos os bancos de dados
