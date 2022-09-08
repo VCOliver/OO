@@ -1,3 +1,11 @@
+package models;
+/**
+ * Abstract class para padronizar tipos de usuarios
+ * 
+ * @author VCOliver
+ * @version 1.0
+ *
+ */
 public abstract class Person {
 	
 	//Attributes
@@ -6,12 +14,12 @@ public abstract class Person {
 	protected String email;
 
 	// Methods
-	void changePassword() {
-		
+	void changePassword(String newPassword) {
+		this.password = newPassword;
 	}
 
 	void deleteAccount() {
-		
+
 	}
 	
 }
