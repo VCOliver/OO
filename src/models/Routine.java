@@ -26,6 +26,7 @@ public class Routine {
 	/**
 	 * Metodo para adicionar novos exercicios a rotina
 	 * @param exercises the exercises to set
+	 * @see Exercise
 	 */
 	public void addExercises(Exercise newExercise) {
 		if(!this.exercises.contains(newExercise)) {
@@ -36,6 +37,7 @@ public class Routine {
 	/**
 	 * metodo para remover exercicios da rotina
 	 * @param exercise
+	 * @see Exercise
 	 */
 	public void removeExercise(Exercise exercise) {
 		this.exercises.remove(exercise);
@@ -63,6 +65,7 @@ public class Routine {
 	/**
 	 * Retorna lista de exercicios
 	 * @return the exercises
+	 * @see Exercise
 	 */
 	public ArrayList<Exercise> getExercises() {
 		return exercises;
@@ -74,6 +77,7 @@ public class Routine {
 	/**
 	 * Define novo nome para a rotina
 	 * @param name the name to set
+	 * @see Exercise
 	 */
 	public void rename(String name) {
 		this.name = name;
