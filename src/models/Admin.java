@@ -13,13 +13,9 @@ public class Admin extends Person{
     void createExercise(String name, String[] muscles, String description, String image){
     	
     	Exercise exercise = new Exercise(name, muscles, description, image);
-    	
-    	for(String m : muscles) {
-    		for(Muscles muscle : Muscles.values()) {
-    			if(muscle == Muscles.valueOf(m.toUpperCase())) {
-    				DataBase.getExercises().get(muscle.getIndex()).add(exercise);
-    			}
-    		}
+   	
+    	for(String muscle : muscles) {
+    		DataBase.getExercises().get(muscle).add(exercise);
     	}
 
     }
