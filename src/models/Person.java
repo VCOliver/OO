@@ -14,13 +14,11 @@ public abstract class Person {
 	protected String email;
 
 	// Methods
-	void changePassword(String newPassword) {
+	public void changePassword(String newPassword) {
 		this.password = newPassword;
 	}
 
-	void deleteAccount() {
-
-	}
+	public void deleteAccount() {}
 	
 }
 
