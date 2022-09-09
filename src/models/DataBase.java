@@ -19,7 +19,6 @@ public class DataBase {
 	 * @see Exercise
 	 */
 	private static HashMap<String, ArrayList<Exercise>> exercises = new HashMap<>();
-	
 
 	/**
 	 * Array para armazenar usuarios
@@ -37,7 +36,7 @@ public class DataBase {
 	// Getters
 	
 	/**
-	 * Returna Array 2D de exercicios 
+	 * Returna Mapa de exercicios 
 	 * @return the exercises
 	 */
 	public static HashMap<String, ArrayList<Exercise>> getExercises() {
@@ -61,17 +60,4 @@ public class DataBase {
 	}
 	
 	
-	//Setters
-	/**
-	 * Initializes exercises database if null
-	 */
-	public static void InitializeExerciseDataBase(){
-		
-		if(exercises.isEmpty()) {
-			for(Muscles muscle : Muscles.values()) {
-				exercises.put(muscle.getValue(), new ArrayList<>());
-			}
-		}
-		
-	}
 }
