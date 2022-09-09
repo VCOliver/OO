@@ -53,7 +53,7 @@ public class User extends Person{
 	 * Cria nova rotina para o usuario
 	 * @param name
 	 */
-	void createRoutine(String name) {
+	public void createRoutine(String name) {
 		
 		Routine routine = new Routine(name, user_name);
 		
@@ -61,13 +61,13 @@ public class User extends Person{
 		
 	}
 
-	void deleteRoutine(Routine routine) {
+	public void deleteRoutine(Routine routine) {
 		this.routines.remove(routine);
 	}
 
 	
 	@Override
-	void deleteAccount() {
+	public void deleteAccount() {
 		
 		if(DataBase.getUsers().contains(User.this)) {
 			DataBase.getUsers().remove(User.this);
