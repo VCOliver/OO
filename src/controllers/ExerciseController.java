@@ -21,8 +21,6 @@ public class ExerciseController {
 			}
 		}
 		
-		System.out.println(DataBase.getExercises());
-		
 	}
 	
 }
