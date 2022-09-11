@@ -2,7 +2,7 @@ package models;
 /**
  * Classe para definir exercicios
  * @author VCOliver
- *
+ *@version 1.3
  */
 
 public class Exercise {
@@ -26,8 +26,15 @@ public class Exercise {
 		this.image = image;
 	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+	
 	
 	//Getters
+
 
 	/**
 	 * @return the name
