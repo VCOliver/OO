@@ -1,9 +1,11 @@
 /**
  * 
  */
-package view;
+package views;
 
-import controllers.ExerciseController;
+import controllers.DataBaseController;
+import models.Routine;
+import models.User;
 
 /**
  * @author VCOliver
@@ -17,9 +19,18 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		ExerciseController.InitExerciseDataBase(); // Inicializa o banco de dados dos exercicios
+		DataBaseController.init(); // Inicializa o banco de dados dos exercicios
 		
-		Login login = new Login();
+//		Login login = new Login();
+//		new CreateAccount();
+		User user = new User("Victor", "victor@gmail.com", "12345");
+		Routine routine = user.createRoutine("routine1");
+		user.createRoutine("routine2");
+		user.createRoutine("routine3");
+		
+//		new UserScreen(user);
+//		new CreateRoutine(user);
+		new RoutineScreen(user, routine);
 
 	}
 
