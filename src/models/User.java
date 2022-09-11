@@ -11,10 +11,10 @@ import java.util.List;
 public class User extends Person{
 	
 	//Attributes
-	List<Routine> routines = new ArrayList<>();
+	private ArrayList<Routine> routines = new ArrayList<>();
 	
 	//Constructor
-	public User(String name, String password, String email) {
+	public User(String name, String email, String password) {
 		user_name = name;
 		this.password = password;
 		this.email = email;
@@ -39,10 +39,11 @@ public class User extends Person{
 		return this.email;
 	}
 	
-	/** Retorna lista de rotinas do usuario
+	/** 
+	 * Retorna lista de rotinas do usuario
 	 * @return the routines
 	 */
-	public List<Routine> getRoutines() {
+	public ArrayList<Routine> getRoutines() {
 		return routines;
 	}
 	
@@ -53,11 +54,13 @@ public class User extends Person{
 	 * Cria nova rotina para o usuario
 	 * @param name
 	 */
-	public void createRoutine(String name) {
+	public Routine createRoutine(String name) {
 		
 		Routine routine = new Routine(name, user_name);
 		
 		this.routines.add(routine); // Adds routine to User
+		
+		return routine;
 		
 	}
 
