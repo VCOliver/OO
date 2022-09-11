@@ -6,8 +6,6 @@ package views;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
@@ -18,11 +16,13 @@ import javax.swing.*;
 /**
  * Primeira tela a ser vista pelo usuario, responsavel pelo login
  * @author VCOliver
+ * @see CreateAccount
  */
 @SuppressWarnings("serial")
 public class Login extends JFrame implements KeyListener{
 
 	//Attributes
+	public static Login instance;
 	private static JFrame frame;
 	private static JButton btn;
 	private static JTextField emailInput;
@@ -31,6 +31,9 @@ public class Login extends JFrame implements KeyListener{
 	private static JLabel emailLabel;
 	private static JLabel createAccount;
 	
+	/**
+	 * 
+	 */
 	public Login() {
 		
 		
@@ -47,7 +50,7 @@ public class Login extends JFrame implements KeyListener{
 		//Setting up email box
 		emailLabel = new JLabel("Insira seu email:");
 		emailLabel.setFont(new Font("Arial", Font.BOLD, 16));
-		emailLabel.setBounds(100, 90, 300, 30);
+		emailLabel.setBounds(100, 100, 300, 30);
 		emailInput = new JTextField(10);
 		emailInput.setBounds(100, 130, 300, 30);
 		emailInput.setFocusable(true);
@@ -55,7 +58,7 @@ public class Login extends JFrame implements KeyListener{
 		//Setting up password box
 		passwordLabel = new JLabel("Insira sua senha:");
 		passwordLabel.setFont(new Font("Arial", Font.BOLD, 16));
-		passwordLabel.setBounds(100, 170, 300, 30);
+		passwordLabel.setBounds(100, 180, 300, 30);
 		passwordInput = new JPasswordField(10);
 		passwordInput.setBounds(100, 210, 300, 30);
 		
@@ -82,18 +85,20 @@ public class Login extends JFrame implements KeyListener{
 		frame.addKeyListener(this);
 		emailInput.addKeyListener(this);
 		passwordInput.addKeyListener(this);
-		
+	
 		btn.addActionListener(e -> { 		 //Button action listener
 			String email = emailInput.getText();
 			String password = String.valueOf(passwordInput.getPassword());
 			
 			System.out.println(email + " " + password);
+			
 		});
 		
 		createAccount.addMouseListener(new MouseAdapter() {
 		      @Override
 		      public void mouseClicked(MouseEvent e) {
-		    	  System.out.println("Somebody wants to create a new account."); 
+					frame.dispose();
+					new CreateAccount();
 		      }
 		    }
 		);
