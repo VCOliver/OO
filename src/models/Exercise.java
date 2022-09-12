@@ -26,6 +26,9 @@ public class Exercise {
 		this.image = image;
 	}
 	
+	/**
+	 * Quando referenciado e visto como name
+	 */
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

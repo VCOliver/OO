@@ -18,7 +18,8 @@ public abstract class Person {
 		this.password = newPassword;
 	}
 
-	public void deleteAccount() {}
+	public void deleteAccount() {}	
+	
 	
 }
 

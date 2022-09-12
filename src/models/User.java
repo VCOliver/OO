@@ -27,7 +27,7 @@ public class User extends Person{
 	 * Returna o nome do usuario
 	 * @return
 	 */
-	String getName() {
+	public String getName() {
 		return this.user_name;
 	}
 	
@@ -35,8 +35,12 @@ public class User extends Person{
 	 * retorna o email do usuario
 	 * @return
 	 */
-	String getEmail() {
+	public String getEmail() {
 		return this.email;
+	}
+	
+	public String getPassword() {
+		return this.password;
 	}
 	
 	/** 
@@ -69,6 +73,9 @@ public class User extends Person{
 	}
 
 	
+	/**
+	 * Deleta instancia de usuario
+	 */
 	@Override
 	public void deleteAccount() {
 		
