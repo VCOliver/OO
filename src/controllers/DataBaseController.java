@@ -9,10 +9,10 @@ public class DataBaseController {
 	/**
 	 * Initializes exercises database if null
 	 */
-
 	public static void init() {
 		ExerciseController.InitExerciseDataBase();
 		UserController.initUserDataBase();
 		AdminController.initAdminDataBase();
 	}
+	
 }

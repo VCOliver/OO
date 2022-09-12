@@ -15,6 +15,10 @@ import models.Muscles;
  */
 public class ExerciseController {
 	
+	
+	/**
+	 * Coloca dados pre setados no banco de dados
+	 */
 	public static void InitExerciseDataBase(){
 		
 		if(DataBase.getExercises().isEmpty()) {
@@ -37,8 +41,57 @@ public class ExerciseController {
 		
 	}
 	
+	
+	/** 
+	 * Retorna lista de exercicios relacionado a certo musculo
+	 * @param muscle
+	 * @return
+	 * @see Exercise
+	 */
 	public static ArrayList<Exercise> getExercisesFromMuscle(String muscle){
 		return DataBase.getExercises().get(muscle);
+	}
+	
+	/**
+	 * Edita exercicio
+	 * @param exercise
+	 * @param sets
+	 * @param reps
+	 * @param weight
+	 * @param rest
+	 * 
+	 * @see Exercise
+	 */
+	/**
+	 * Edita exercicio selecionado caso usuario logado
+	 * @param exercise
+	 * @param sets
+	 * @param reps
+	 * @param weight
+	 * @param rest
+	 * 
+	 * @see Exercise
+	 */
+	public static void editExercise(Exercise exercise, int sets, int reps, double weight, int rest) {
+		exercise.setReps(reps);
+		exercise.setSets(sets);
+		exercise.setWeight(weight);
+		exercise.setRest(rest);
+	}
+	
+	/**
+	 * Edita exercicio selecionado caso admin logado
+	 * @param exercise
+	 * @param name
+	 * @param muscles
+	 * @param description
+	 * 
+	 * @see Exercise
+	 */
+	public static void editExercise(Exercise exercise, String name, String[] muscles, String description) {
+		exercise.setName(name);
+		exercise.setMuscles(muscles);
+		exercise.setDescription(description);
 	}
 	
 }

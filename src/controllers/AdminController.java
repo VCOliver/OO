@@ -5,6 +5,7 @@ package controllers;
 
 import models.Admin;
 import models.DataBase;
+import models.User;
 
 /**
  * @author VCOliver
@@ -18,4 +19,5 @@ public class AdminController {
 		}
 		
 	}
+	
 }

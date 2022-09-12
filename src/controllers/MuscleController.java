@@ -14,6 +14,10 @@ import models.Muscles;
  */
 public class MuscleController {
 	
+	/**
+	 * Retorna String array de musculos
+	 * @return muscles
+	 */
 	public static String[] getMuscleArray(){
 		
 		String[] muscles = new String[8];
