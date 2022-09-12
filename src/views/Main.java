@@ -21,16 +21,16 @@ public class Main {
 		
 		DataBaseController.init(); // Inicializa o banco de dados dos exercicios
 		
-//		Login login = new Login();
+		Login login = new Login();
 //		new CreateAccount();
-		User user = new User("Victor", "victor@gmail.com", "12345");
-		Routine routine = user.createRoutine("routine1");
-		user.createRoutine("routine2");
-		user.createRoutine("routine3");
+//		User user = new User("Victor", "victor@gmail.com", "12345");
+//		Routine routine = user.createRoutine("routine1");
+//		user.createRoutine("routine2");
+//		user.createRoutine("routine3");
 		
 //		new UserScreen(user);
 //		new CreateRoutine(user);
-		new RoutineScreen(user, routine);
+//		new RoutineScreen(user, routine);
 
 	}
 

@@ -12,9 +12,11 @@ import javax.swing.JLabel;
 import models.Exercise;
 
 /**
+ * Tela para visualisar exercicios que podem ser adicionados
  * @author VCOliver
  *
  */
+@SuppressWarnings("serial")
 public class ExerciseOptionsScreen extends JFrame{
 	
 	public static JLabel name;
@@ -27,6 +29,7 @@ public class ExerciseOptionsScreen extends JFrame{
 		//Setting up frame
 		this.setTitle("Exercicio: " + exercise.getName());
 		this.setLocationRelativeTo(null);
+//		this.setLocation(500, 500);
 		this.setResizable(true);
 		this.setLayout(new GridLayout(size,1));
 		

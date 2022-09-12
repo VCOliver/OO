@@ -13,6 +13,11 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.*;
 
+import controllers.DataBaseController;
+import controllers.UserController;
+import models.Admin;
+import models.User;
+
 /**
  * Primeira tela a ser vista pelo usuario, responsavel pelo login
  * @author VCOliver
@@ -90,7 +95,14 @@ public class Login extends JFrame implements KeyListener{
 			String email = emailInput.getText();
 			String password = String.valueOf(passwordInput.getPassword());
 			
-			System.out.println(email + " " + password);
+			User user = UserController.login(email, password);
+			
+			if(user != null) {
+				frame.dispose();
+				new UserScreen(user);
+			}else {
+				JOptionPane.showMessageDialog(null, "Email ou senha errados", "ERROR", JOptionPane.ERROR_MESSAGE);
+			}
 			
 		});
 		
@@ -130,5 +142,6 @@ public class Login extends JFrame implements KeyListener{
 		// TODO Auto-generated method stub
 
 	}
+	
 
 }

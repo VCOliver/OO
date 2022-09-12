@@ -19,6 +19,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import controllers.UserController;
+import models.User;
+
 /**
  * Page to create account
  * @author VCOliver
@@ -37,7 +40,7 @@ public class CreateAccount extends JFrame implements KeyListener {
 	private static JPasswordField password2Input;
 	private static JLabel password2Label;
 	private static JButton btn;
-	private static JCheckBox admCheckBox;
+//	private static JCheckBox admCheckBox;
 	
 	public CreateAccount() {
 		//Setting up frame
@@ -92,13 +95,13 @@ public class CreateAccount extends JFrame implements KeyListener {
 		btn.setBounds(190,380,120,30);
 		
 		//Setting up Check Box
-		admCheckBox = new JCheckBox();
-		admCheckBox.setText("Criar conta de administrador?");
-		admCheckBox.setBackground(new Color(17, 192, 102));
+//		admCheckBox = new JCheckBox();
+//		admCheckBox.setText("Criar conta de administrador?");
+//		admCheckBox.setBackground(new Color(17, 192, 102));
 		
 		//Adding to panel
 		panel.add(btn);
-		panel.add(admCheckBox);
+//		panel.add(admCheckBox);
 		
 		//Adding to frame
 		frame.add(usernameLabel);
@@ -122,8 +125,13 @@ public class CreateAccount extends JFrame implements KeyListener {
 			String password = String.valueOf(passwordInput.getPassword());
 			String password2 = String.valueOf(password2Input.getPassword());
 			
-			if(password.equals(password2) && !password.trim().isEmpty()) {
-				System.out.println("Username = " + username + " | email = " + email + " | Password = " + password);
+			if((password.equals(password2) && !password.trim().isEmpty())&& 
+					(!password.matches("[0-9a-zA-Z$*&_/@#]{4,}") 
+					|| !email.matches("^(.+)@(.+)$")
+					|| !username.matches("[0-9a-zA-Z]+"))) {
+				User user = UserController.createUser(username, email, password);
+				frame.dispose();
+				new UserScreen(user);
 			} else {
 				JOptionPane.showMessageDialog(null, "Passwords do not match", "ERROR", JOptionPane.ERROR_MESSAGE);
 			}
@@ -136,12 +144,12 @@ public class CreateAccount extends JFrame implements KeyListener {
 //			new RoutineScreen();
 		});
 		
-		admCheckBox.addActionListener(e -> {
-			if(admCheckBox.isSelected()) {
-				System.out.println("Creating an admin account");
-			}
-		});
-		
+//		admCheckBox.addActionListener(e -> {
+//			if(admCheckBox.isSelected()) {
+//				System.out.println("Creating an admin account");
+//			}
+//		});
+//		
 		frame.setVisible(true);
 	}
 

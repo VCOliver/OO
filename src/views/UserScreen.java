@@ -90,7 +90,9 @@ public class UserScreen extends JFrame{
 		this.setVisible(true);
 		
 		btn.addActionListener(e -> {
-			System.out.println("Creating new Routine");
+			
+			new CreateRoutine(user);
+			
 		});
 		
 		routineList.addListSelectionListener(e -> {
