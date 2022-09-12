@@ -67,6 +67,28 @@ public class Admin extends Person{
     		DataBase.getExercises().get(muscle).remove(exercise);
     	}
     }
+    
+	//Getters
+	
+	/**
+	 * Returna o nome do usuario
+	 * @return
+	 */
+	public String getName() {
+		return this.user_name;
+	}
+	
+	/**
+	 * retorna o email do usuario
+	 * @return
+	 */
+	public String getEmail() {
+		return this.email;
+	}
+	
+	public String getPassword() {
+		return this.password;
+	}
 
     /**
      * Metodo para deletar atual instancia de administrador da base de dados
